@@ -1,0 +1,23 @@
+class Solution {
+  public:
+  void solve(stack<int>& s,int count, int sizeOfStack){
+      
+      if(count==(sizeOfStack/2)){
+          s.pop();
+return;
+          
+      }
+      // Recursive approach//
+      int curr = s.top();
+      s.pop();
+      solve(s,count+1,sizeOfStack);
+      s.push(curr);
+      
+  }
+    
+    void deleteMid(stack<int>& s, int sizeOfStack) {
+        // code here..
+        int count = 0;
+        solve(s,count,sizeOfStack);
+    }
+};
